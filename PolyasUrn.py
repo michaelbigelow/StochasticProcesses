@@ -1,4 +1,3 @@
-import numpy as np
 from numpy import random
 
 class Urn:
@@ -18,17 +17,3 @@ class Urn:
             self.red += 1
         elif draw == "green":
             self.green += 1
-
-
-def polyas_urn(num_draws1=998, num_draws2=0, num_trials=100):
-    trials1 = np.zeros(num_trials)
-    trials2 = np.zeros(num_trials)
-    for j in range(num_trials):
-        urn = Urn()
-        for i in range(num_draws1):
-            urn.update()
-        trials1[j] = urn.red / num_draws1
-        for i in range(num_draws2):
-            urn.update()
-        trials2[j] = urn.red / (num_draws1 + num_draws2)
-    return trials1, trials2
