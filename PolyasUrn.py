@@ -1,5 +1,6 @@
 from numpy import random
 
+
 class Urn:
     def __init__(self, red=1, green=1):
         self.red = red
